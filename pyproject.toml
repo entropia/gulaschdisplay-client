@@ -3,6 +3,9 @@ name = "gulaschdisplay-client"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
+packages = [
+    { include = "gulaschdisplay-client" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -10,6 +13,9 @@ i3ipc = "^2.2.1"
 getmac = "^0.9.4"
 requests = "^2.31.0"
 aiohttp = "^3.9.5"
+
+[tool.poetry.scripts]
+gulaschdisplay-client = "gulaschdisplay-client.main:main"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"

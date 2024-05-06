@@ -100,13 +100,14 @@ async def pull_config(force_update=False):
                 CURR_CONF = conf_response
 
 
-async def main():
+async def async_main():
     await asyncio.create_task(register())
     await asyncio.create_task(update_displays())
     await asyncio.create_task(pull_config(force_update=True))
     await asyncio.create_task(periodic(5, pull_config))
 
 
-loop = asyncio.get_event_loop().create_task(main())
-with suppress(KeyboardInterrupt):
-    asyncio.get_event_loop().run_forever()
+def main():
+    loop = asyncio.get_event_loop().create_task(async_main())
+    with suppress(KeyboardInterrupt):
+        asyncio.get_event_loop().run_forever()
