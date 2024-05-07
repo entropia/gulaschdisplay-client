@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 packages = [
-    { include = "gulaschdisplay-client" }
+    { include = "gulaschdisplay_client" }
 ]
 
 [tool.poetry.dependencies]
@@ -15,7 +15,7 @@ requests = "^2.31.0"
 aiohttp = "^3.9.5"
 
 [tool.poetry.scripts]
-gulaschdisplay-client = "gulaschdisplay-client.main:main"
+gulaschdisplay-client = "gulaschdisplay_client.main:main"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
